@@ -33,7 +33,7 @@
     }
     </script>
 
-    <!-- Call and WhatsApp tracking functions -->
+    <!-- Call tracking function -->
     <script>
     function makePhoneCall(phoneNumber) {
       var cleanNumber = String(phoneNumber).replace(/[\s\-]/g, '');
@@ -54,16 +54,6 @@
         window.location.href = telUrl;
       }, 150);
      
-      return false;
-    }
-
-    function trackWhatsAppClick(url) {
-      if (typeof gtag_report_conversion === 'function') {
-        gtag_report_conversion(url);
-      }
-      setTimeout(function() {
-        window.open(url, '_blank');
-      }, 150);
       return false;
     }
     </script>
@@ -112,7 +102,6 @@
             --text-dark: #1a2a3a;
             --text-muted: #4a5e72;
             --call-green: #00c853;
-            --whatsapp-green: #25D366;
             --shadow-light: 0 4px 20px rgba(26,42,74,0.06);
             --shadow-hover: 0 12px 40px rgba(26,42,74,0.12);
             --border-light: #d4dde8;
@@ -201,8 +190,8 @@
        
         .phone-display:hover {
             transform: scale(1.05);
-            background: var(--whatsapp-green);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+            background: #00b84a;
+            box-shadow: 0 6px 25px rgba(0, 200, 83, 0.4);
         }
        
         .hero {
@@ -321,16 +310,6 @@
         .secondary-btn:hover {
             background: #00b84a;
             box-shadow: 0 10px 40px rgba(0, 200, 83, 0.5);
-        }
-       
-        .whatsapp-btn {
-            background: var(--whatsapp-green);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.35);
-        }
-       
-        .whatsapp-btn:hover {
-            background: #1da851;
-            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.5);
         }
        
         .hours-badge {
@@ -806,16 +785,6 @@
             box-shadow: 0 10px 40px rgba(0, 200, 83, 0.5);
         }
        
-        .floating-whatsapp {
-            background: var(--whatsapp-green);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.35);
-        }
-       
-        .floating-whatsapp:hover {
-            background: #1da851;
-            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.5);
-        }
-       
         .simple-footer {
             background: var(--primary-dark);
             color: #cccccc;
@@ -840,8 +809,8 @@
        
         .footer-phone:hover {
             transform: scale(1.06);
-            background: var(--whatsapp-green);
-            box-shadow: 0 8px 35px rgba(37, 211, 102, 0.4);
+            background: #00b84a;
+            box-shadow: 0 8px 35px rgba(0, 200, 83, 0.4);
         }
        
         .simple-footer p:last-child {
@@ -910,10 +879,6 @@
             <button class="hero-btn secondary-btn" onclick="makePhoneCall('56550310')">
                 <i class="fas fa-phone-volume"></i>
                 اطلب استشارة مجانية
-            </button>
-            <button class="hero-btn whatsapp-btn" onclick="trackWhatsAppClick('https://wa.me/96556550310')">
-                <i class="fab fa-whatsapp"></i>
-                واتساب فوري
             </button>
         </div>
     </section>
@@ -1038,7 +1003,6 @@
         </div>
         <div class="contact-info">
             <i class="fas fa-phone-alt"></i> <strong>رقم النجار: 56550310</strong><br>
-            <i class="fab fa-whatsapp"></i> واتساب 24 ساعة: <strong onclick="trackWhatsAppClick('https://wa.me/96556550310')" style="cursor:pointer;">56550310</strong><br>
             <i class="fas fa-map-marker-alt"></i> نغطي جميع مناطق الكويت: حولي، الفروانية، العاصمة، الجهراء، مبارك الكبير، الأحمدي، السالمية<br>
             <i class="fas fa-shield-alt"></i> نجار معتمد | ضمان الجودة | خدمة فورية | أسعار تنافسية
         </div>
@@ -1083,7 +1047,6 @@
 
     <div class="floating-btns">
         <button class="floating-btn" onclick="makePhoneCall('56550310')"><i class="fas fa-phone"></i> اتصل الآن</button>
-        <button class="floating-btn floating-whatsapp" onclick="trackWhatsAppClick('https://wa.me/96556550310')"><i class="fab fa-whatsapp"></i> واتساب</button>
     </div>
 
     <div class="simple-footer">
